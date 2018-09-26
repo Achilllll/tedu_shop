@@ -66,7 +66,7 @@ public class BaseEntityUtils {
                         method.invoke(baseEntity,(String)value);
                     }else if("java.util.Date".equals(parameterTypes[0].getName())){
                         method.invoke(baseEntity,(Date)value);
-                    }else if("java.util.Double".equals(parameterTypes[0].getName())){
+                    }else if("java.lang.Double".equals(parameterTypes[0].getName())){
                         method.invoke(baseEntity,(Double)value);
                     }
                 }

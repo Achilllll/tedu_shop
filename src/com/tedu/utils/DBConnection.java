@@ -1,57 +1,47 @@
 package com.tedu.utils;
 
 
+import org.apache.commons.dbcp.BasicDataSourceFactory;
+
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
 public class DBConnection {
-    private static Connection connection;
+    private static DataSource dataSource;
     private static Properties properties;
-    private static String url;
-    private static String username;
-    private static String password;
-    private static String driver;
 
 
     static {
         properties = new Properties();
         try {
             properties.load(DBConnection.class.getResourceAsStream("../db.properties"));
-            url = (String) properties.get("url");
-            username = (String) properties.get("username");
-            password = (String) properties.get("password");
-            driver = (String) properties.get("driver");
+            //创建数据源
+            String driver=properties.getProperty("driver");
             Class.forName(driver);
+            dataSource = BasicDataSourceFactory.createDataSource(properties);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-        }
-
-    }
-
-    public static Connection getConnection() {
-        try {
-            connection = DriverManager.getConnection(url, username, password);
-            connection.setAutoCommit(false);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return connection;
     }
 
-    public static void rollBack() throws SQLException {
-        connection.rollback();
+    public static Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
     }
 
-    public static void closeConnection() {
-        try {
-            if (connection != null) {
-                connection.close();
+    public static void closeConnection(Connection conn){
+        if(conn!=null){
+            try{
+                //将Connection连接对象还给数据库连接池
+                conn.close();
+            }catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-    }
+
+}
 }

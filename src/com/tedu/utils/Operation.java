@@ -15,9 +15,10 @@ public class Operation {
     public Integer count(String sql,Object[] objects){
         Connection conn=null;
         PreparedStatement preparedStatement=null;
-        conn=DBConnection.getConnection();
+
         Integer count=0;
         try {
+            conn=DBConnection.getConnection();
             preparedStatement=conn.prepareStatement(sql);
             for (int i = 0; i <objects.length ; i++) {
                 preparedStatement.setObject(i+1,objects[i]);

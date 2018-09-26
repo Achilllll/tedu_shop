@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User selectUserById(Integer id) {
-        String sql="select count(*) as count from t_user where id="+id;
+        String sql="select * from t_user where id="+id;
         return (User) operation.find(sql,new Object[]{}, new UserMapping());
     }
 

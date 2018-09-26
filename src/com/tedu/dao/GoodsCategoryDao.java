@@ -18,4 +18,12 @@ public interface GoodsCategoryDao {
             Integer offset,
             Integer count);
 
+
+    /***
+     * 根据id查找主类
+     * @param id
+     * @return
+     */
+    GoodsCategory selectCategoryById(Integer id);
+
 }

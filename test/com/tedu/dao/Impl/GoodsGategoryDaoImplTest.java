@@ -17,4 +17,9 @@ public class GoodsGategoryDaoImplTest {
     public void selectCategoryByParentId() {
         System.out.println(goodsCategoryDao.selectCategoryByParentId(1,5,5));
     }
+
+    @Test
+    public void selectCategoryById() {
+        System.out.println(goodsCategoryDao.selectCategoryById(171));
+    }
 }

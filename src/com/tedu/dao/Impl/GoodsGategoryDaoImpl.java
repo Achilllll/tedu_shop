@@ -20,4 +20,10 @@ public class GoodsGategoryDaoImpl implements GoodsCategoryDao {
         Object[] parameters=new Object[]{parentId,offset,count};
         return (List<GoodsCategory>) operation.query(sql,parameters,new GoodsGategoryMapping());
     }
+
+    @Override
+    public GoodsCategory selectCategoryById(Integer id) {
+        String sql="select * from t_goods_category where id="+id;
+        return (GoodsCategory) operation.find(sql,new Object[]{},new GoodsGategoryMapping());
+    }
 }
