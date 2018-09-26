@@ -29,7 +29,7 @@ public class AddressDaoImpl implements AddressDao{
     @Override
     public List<Address> selectAddressByUid(Integer uid) {
         AddressMapping mapping=new AddressMapping();
-        String sql="select * from t_address where uid=?";
+        String sql="select * from t_address where uid="+uid;
         List<Address> addressList= (List<Address>) operation.query(sql,new Object[]{uid},mapping);
         return addressList;
     }
@@ -42,8 +42,8 @@ public class AddressDaoImpl implements AddressDao{
 
     @Override
     public Integer updateDefault(Integer id) {
-        String sql="update t_address set is_default =1 where id=?";
-        return operation.update(sql,new Object[]{id},false);
+        String sql="update t_address set is_default =1 where id="+id;
+        return operation.update(sql,new Object[]{},false);
     }
 
     @Override
