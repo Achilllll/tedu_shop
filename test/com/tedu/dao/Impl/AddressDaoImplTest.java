@@ -70,6 +70,6 @@ public class AddressDaoImplTest {
 
     @Test
     public void deleteAddress() {
-        addressDao.deleteAddress(10);
+        addressDao.deleteAddress(9);
     }
 }

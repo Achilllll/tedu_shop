@@ -48,8 +48,8 @@ public class AddressDaoImpl implements AddressDao{
 
     @Override
     public Address selectAddressById(Integer id) {
-        String sql="select * from t_address where id=?";
-        return (Address) operation.find(sql,new Object[]{id},new AddressMapping());
+        String sql="select * from t_address where id="+id;
+        return (Address) operation.find(sql,new Object[]{},new AddressMapping());
     }
 
     @Override
@@ -64,8 +64,8 @@ public class AddressDaoImpl implements AddressDao{
 
     @Override
     public void deleteAddress(Integer id) {
-        String sql="delete from t_address where id=?";
-        operation.update(sql,new Object[]{id},false);
+        String sql="delete from t_address where id="+id;
+        operation.update(sql,new Object[]{},false);
     }
 
 
