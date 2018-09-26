@@ -30,7 +30,7 @@ public class AddressDaoImpl implements AddressDao{
     public List<Address> selectAddressByUid(Integer uid) {
         AddressMapping mapping=new AddressMapping();
         String sql="select * from t_address where uid="+uid;
-        List<Address> addressList= (List<Address>) operation.query(sql,new Object[]{uid},mapping);
+        List<Address> addressList= (List<Address>) operation.query(sql,new Object[]{},mapping);
         return addressList;
     }
 
