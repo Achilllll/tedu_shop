@@ -28,7 +28,7 @@ public class DictDaoImpl implements DictDao {
         return (List<Province>) operation.query(sql, new Object[]{}, new ObjectMapping() {
             @Override
             public Object mapping(ResultSet resultSet) {
-                return BaseEntityUtils.objectMapping(resultSet,province);
+                return BaseEntityUtils.objectMapping(resultSet,new Province());
             }
         });
     }
@@ -41,7 +41,7 @@ public class DictDaoImpl implements DictDao {
         return (List<City>) operation.query(sql, new Object[]{}, new ObjectMapping() {
             @Override
             public Object mapping(ResultSet resultSet) {
-                return BaseEntityUtils.objectMapping(resultSet,city);
+                return BaseEntityUtils.objectMapping(resultSet,new City());
             }
         });
     }
@@ -54,7 +54,7 @@ public class DictDaoImpl implements DictDao {
         return (List<Area>) operation.query(sql, new Object[]{}, new ObjectMapping() {
             @Override
             public Object mapping(ResultSet resultSet) {
-                return BaseEntityUtils.objectMapping(resultSet,area);
+                return BaseEntityUtils.objectMapping(resultSet,new Area());
             }
         });
     }
