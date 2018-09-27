@@ -27,19 +27,19 @@
 <div class="ck-slide">
     <ul class="ck-slide-wrapper">
         <li>
-            <a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner1.png" alt=""></a>
+            <a href="#"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner1.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner2.png" alt=""></a>
+            <a href="#"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner2.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner3.png" alt=""></a>
+            <a href="#"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner3.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner4.png" alt=""></a>
+            <a href="#"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner4.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner1.png" alt=""></a>
+            <a href="#"><img src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner1.png" alt=""></a>
         </li>
     </ul>
     <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
@@ -74,7 +74,7 @@
 
                 <p class="top_ys3">￥4999.00</p>
 
-                <p class="top_ys4 color_2"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
+                <p class="top_ys4 color_2"><a href="#">查看详情</a></p>
             </div>
             <span><img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img1.png" alt=""/></span>
         </div>
@@ -91,7 +91,7 @@
 
                 <p class="top_ys3">￥6888.00</p>
 
-                <p class="top_ys4 color_2"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
+                <p class="top_ys4 color_2"><a href="#">查看详情</a></p>
             </div>
             <span><img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img2.png" alt=""/></span>
         </div>
@@ -114,7 +114,7 @@
                     <p><%=key%></p>
                     <ul>
                         <c:forEach items="<%=values%>" var="secondLevel">
-                            <li><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=${secondLevel.id}">${secondLevel.name}</a></li>
+                            <li><a href="#">${secondLevel.name}</a></li>
                         </c:forEach>
                     </ul>
                 </c:forEach>
@@ -126,7 +126,7 @@
                 <img src="..${computer.image}" style="width:198px; height:136px" alt=""/>
                 <p class="bottom_ys2" style="width:198px; height:28px">${computer.name}</p>
                 <p class="bottom_ys3">￥${computer.price}</p>
-                <p class="bottom_ys4 color_2"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
+                <p class="bottom_ys4 color_2"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=${computer.id}">查看详情</a></p>
             </div>
         </c:forEach>
     </div>
@@ -194,7 +194,7 @@
                 <img src="..${books.image}" style="width:198px; height:136px" alt=""/>
                 <p class="bottom_ys2" style="width:198px; height:28px">${books.name}</p>
                 <p class="bottom_ys3 price_ys3">￥${books.price}</p>
-                <p class="bottom_ys4 color_1"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
+                <p class="bottom_ys4 color_1"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=${books.id}">查看详情</a></p>
             </div>
         </c:forEach>
 

@@ -31,7 +31,7 @@ public class GoodsServiceImpl implements GoodsService {
         List<GoodsDto> resultList=new ArrayList<>();
         if(Objects.nonNull(goodsList)&&goodsList.size()>0){
             for (Goods good:goodsList) {
-                resultList.add(new GoodsDto(good.getTitle(),good.getPrice(),good.getImage()));
+                resultList.add(new GoodsDto(good.getTitle(),good.getPrice(),good.getImage(),good.getId()));
             }
         }
         return resultList;

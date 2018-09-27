@@ -40,7 +40,7 @@
         <!-- 商品名称-->
         <h1>${goods.itemType}</h1>
         <!-- 商品全称-->
-        <h3>${goods.name}</h3>
+        <h3>${goods.title}</h3>
         <!-- 价格部分-->
         <div class="price">
             <div id="pro_price"><b>学员售价：</b><span>￥${goods.price}.00</span></div>

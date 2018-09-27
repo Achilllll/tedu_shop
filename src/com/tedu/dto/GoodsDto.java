@@ -1,14 +1,24 @@
 package com.tedu.dto;
 
 public class GoodsDto {
+    private Integer id;
     private String name;
     private Double price;
     private String image;
 
-    public GoodsDto(String name, Double price, String image) {
+    public GoodsDto(String name, Double price, String image,Integer id) {
         this.name = name;
         this.price = price;
         this.image=image;
+        this.id=id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
