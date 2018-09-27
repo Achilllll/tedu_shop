@@ -5,7 +5,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>我的订单 - 商城</title>
+    <name>我的订单 - 商城</name>
     <link href="${pageContext.request.contextPath}/css/orders.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet"/>
@@ -120,7 +120,7 @@
             <form class="avatar-form"> 
                 <div class="modal-header"> 
                     <button class="close" data-dismiss="modal" type="button">×</button> 
-                    <h4 class="modal-title" id="avatar-modal-label">上传图片</h4> 
+                    <h4 class="modal-name" id="avatar-modal-label">上传图片</h4>
                 </div> 
                 <div class="modal-body"> 
                     <div class="avatar-body"> 
@@ -144,29 +144,29 @@
                         <div class="row avatar-btns"> 
                             <div class="col-md-4"> 
                                 <div class="btn-group"> 
-                                    <button class="btn btn-info fa fa-undo" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"> 向左旋转</button> 
+                                    <button class="btn btn-info fa fa-undo" data-method="rotate" data-option="-90" type="button" name="Rotate -90 degrees"> 向左旋转</button>
                                 </div> 
                                 <div class="btn-group"> 
-                                    <button class="btn  btn-info fa fa-repeat" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"> 向右旋转</button> 
+                                    <button class="btn  btn-info fa fa-repeat" data-method="rotate" data-option="90" type="button" name="Rotate 90 degrees"> 向右旋转</button>
                                 </div> 
                             </div> 
                             <div class="col-md-5" style="text-align: right;">                                 
-                                <button class="btn btn-info fa fa-arrows" data-method="setDragMode" data-option="move" type="button" title="移动"> 
-                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper("setDragMode", "move")"> 
+                                <button class="btn btn-info fa fa-arrows" data-method="setDragMode" data-option="move" type="button" name="移动">
+                                <span class="docs-tooltip" data-toggle="tooltip" name="" data-original-name="$().cropper("setDragMode", "move")">
                                 </span> 
                               </button> 
-                              <button type="button" class="btn btn-info fa fa-search-plus" data-method="zoom" data-option="0.1" title="放大图片"> 
-                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper("zoom", 0.1)"> 
+                              <button type="button" class="btn btn-info fa fa-search-plus" data-method="zoom" data-option="0.1" name="放大图片">
+                                <span class="docs-tooltip" data-toggle="tooltip" name="" data-original-name="$().cropper("zoom", 0.1)">
                                   <!--<span class="fa fa-search-plus"></span>--> 
                                 </span> 
                               </button> 
-                              <button type="button" class="btn btn-info fa fa-search-minus" data-method="zoom" data-option="-0.1" title="缩小图片"> 
-                                <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper("zoom", -0.1)"> 
+                              <button type="button" class="btn btn-info fa fa-search-minus" data-method="zoom" data-option="-0.1" name="缩小图片">
+                                <span class="docs-tooltip" data-toggle="tooltip" name="" data-original-name="$().cropper("zoom", -0.1)">
                                   <!--<span class="fa fa-search-minus"></span>--> 
                                 </span> 
                               </button> 
-                              <button type="button" class="btn btn-info fa fa-refresh" data-method="reset" title="重置图片"> 
-                                    <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper("reset")" aria-describedby="tooltip866214"> 
+                              <button type="button" class="btn btn-info fa fa-refresh" data-method="reset" name="重置图片">
+                                    <span class="docs-tooltip" data-toggle="tooltip" name="" data-original-name="$().cropper("reset")" aria-describedby="tooltip866214">
                                </button> 
                             </div> 
                             <div class="col-md-3"> 

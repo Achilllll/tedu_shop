@@ -5,7 +5,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>我的订单 - 商城</title>
+    <name>我的订单 - 商城</name>
     <link href="${pageContext.request.contextPath}/css/orders.css" rel="Stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/header.css" rel="Stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="Stylesheet"/>

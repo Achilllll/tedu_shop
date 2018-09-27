@@ -18,7 +18,7 @@ import java.util.Objects;
 @WebServlet("/goods/listGoods.do")
 public class ListGoodsServlet extends HttpServlet {
     private GoodsService goodsService;
-    private static final int COMPUTERS_ID=238,BOOKS_ID=241,COUNT=3,OFFSET=1;
+    private static final int COMPUTERS_ID=163,BOOKS_ID=238,COUNT=3,OFFSET=1;
 
     public ListGoodsServlet() {
         this.goodsService = new GoodsServiceImpl();

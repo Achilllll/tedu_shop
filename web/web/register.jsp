@@ -4,7 +4,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>商城注册页面</title>
+  <name>商城注册页面</name>
   <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet"/>
   <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet"/>
   <link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet"/>

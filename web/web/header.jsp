@@ -16,9 +16,9 @@
     <div class="rt">
         <ul class="lf">
             <li><a href="${pageContext.request.contextPath}/user/showPassword.do">${user.username}</a></li>
-            <li><a href="favorites.html" title="我的收藏"><img class="care" src="${pageContext.request.contextPath}/images/header/care.png" alt=""/></a><b>|</b></li>
-            <li><a href="orders.html" title="我的订单"><img class="order" src="${pageContext.request.contextPath}/images/header/order.png" alt=""/></a><b>|</b></li>
-            <li><a href="${pageContext.request.contextPath}/cart/showCart.do" title="我的购物车"><img class="shopcar" src="${pageContext.request.contextPath}/images/header/shop_car.png" alt=""/></a><b>|</b></li>
+            <li><a href="favorites.html" name="我的收藏"><img class="care" src="${pageContext.request.contextPath}/images/header/care.png" alt=""/></a><b>|</b></li>
+            <li><a href="orders.html" name="我的订单"><img class="order" src="${pageContext.request.contextPath}/images/header/order.png" alt=""/></a><b>|</b></li>
+            <li><a href="${pageContext.request.contextPath}/cart/showCart.do" name="我的购物车"><img class="shopcar" src="${pageContext.request.contextPath}/images/header/shop_car.png" alt=""/></a><b>|</b></li>
             <li><a href="help.html">帮助</a><b>|</b></li>
             <c:if test="${user==null}">
                 <li><a href="${pageContext.request.contextPath}/user/showLogin.do">登录</a></li>

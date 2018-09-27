@@ -5,7 +5,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>商城购物车</title>
+    <name>商城购物车</name>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css"/>
@@ -41,7 +41,7 @@
 <div class="big">
     <form  name="" action="" method="post">
     <section id="section" >
-        <div id="title">
+        <div id="name">
             <b>购物车</b>
             <p>
                 已选<span class="total color">0</span>件商品<span class="interval"></span>合计(不含运费):<span class="totalPrices color susum">0.00</span><span class="unit color">元</span>
@@ -78,7 +78,7 @@
                                 <img src="..${cartVo.image}" style="width: 84px;height: 84px" class="lf"/>
                                 <input type="hidden" name="" value="">
                             <span class="des lf">
-                                ${cartVo.title}
+                                ${cartVo.name}
                                   <input type="hidden" name="" value="">
                             </span>
                                 <p class="col lf"><span>颜色：</span><span class="color_des">深空灰  <input type="hidden" name="" value=""></span></p>

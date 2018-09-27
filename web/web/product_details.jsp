@@ -5,7 +5,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>商城详情页</title>
+    <name>商城详情页</name>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
     <link href="${pageContext.request.contextPath}/css/pro_details.css" rel="Stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/animate.css" rel="Stylesheet"/>
@@ -40,7 +40,7 @@
         <!-- 商品名称-->
         <h1>${goods.itemType}</h1>
         <!-- 商品全称-->
-        <h3>${goods.title}</h3>
+        <h3>${goods.name}</h3>
         <!-- 价格部分-->
         <div class="price">
             <div id="pro_price"><b>学员售价：</b><span>￥${goods.price}.00</span></div>
@@ -60,10 +60,10 @@
         <!-- 颜色-->
         <p class="style" id="choose_color">
             <s class="color">颜色：</s>
-            <input type="button" class="i1" value="黑色" title="黑色"/>
-            <input type="button" class="i2" value="灰色" title="灰色"/>
-            <input type="button" class="i3" value="金色" title="金色"/>
-            <input type="button" class="i4" value="白色" title="白色"/>
+            <input type="button" class="i1" value="黑色" name="黑色"/>
+            <input type="button" class="i2" value="灰色" name="灰色"/>
+            <input type="button" class="i3" value="金色" name="金色"/>
+            <input type="button" class="i4" value="白色" name="白色"/>
         </p>
         <!-- 规格-->
         <p>

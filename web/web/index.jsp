@@ -1,3 +1,9 @@
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="com.tedu.dto.GoodsCategoryDto" %>
+<%@ page import="com.tedu.dto.CategoryDto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -7,7 +13,7 @@
 <html>
 <head lang="cn">
     <meta charset="UTF-8">
-    <title>学子商城首页</title>
+    <name>学子商城首页</name>
     <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet"/>
@@ -99,22 +105,27 @@
                 </span>
             </div>
             <div class="item_cat_all">
-                <c:forEach items="${list2}" varStatus="status">
-                    <p>${list2[status.index].name}</p>
+                <c:forEach items="${sessionScope.computerCategories.categories}" var="firstLevel">
+                    <%
+                        Map.Entry<String,List<CategoryDto>> entry= ((Map<String, List<CategoryDto>>) pageContext.getAttribute("firstLevel")).entrySet().iterator().next();
+                        String key=entry.getKey();
+                        List<CategoryDto> values=entry.getValue();
+                    %>
+                    <p><%=key%></p>
                     <ul>
-                        <c:forEach items="${list3[status.index]}" var="cc">
-                            <li><a href="${pageContext.request.contextPath}/goods/showSearch.do?categoryId=${cc.id}">${cc.name}</a></li>
+                        <c:forEach items="<%=values%>" var="secondLevel">
+                            <li><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=${secondLevel.id}">${secondLevel.name}</a></li>
                         </c:forEach>
                     </ul>
                 </c:forEach>
             </div>
         </div>
         <%--双引号内千万不能有空格，大括号内可以有空格！--%>
-        <c:forEach items="${goodsList}" var="goods">
+        <c:forEach items="${sessionScope.computers}" var="computer">
             <div class="item_msg lf">
-                <img src="..${goods.image}" style="width:198px; height:136px" alt=""/>
-                <p class="bottom_ys2" style="width:198px; height:28px">${goods.title}</p>
-                <p class="bottom_ys3">￥${goods.price}</p>
+                <img src="..${computer.image}" style="width:198px; height:136px" alt=""/>
+                <p class="bottom_ys2" style="width:198px; height:28px">${computer.name}</p>
+                <p class="bottom_ys3">￥${computer.price}</p>
                 <p class="bottom_ys4 color_2"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
             </div>
         </c:forEach>
@@ -163,62 +174,29 @@
                 </span>
             </div>
             <div class="item_cat_all item_color">
-                <p>办公设备</p>
-                <ul>
-                    <li><a href="#">投影机</a></li>
-                    <li><a href="#">打印机</a></li>
-                    <li><a href="#">点钞机</a></li>
-                    <li><a href="#">碎纸机</a></li>
-                    <li><a href="#">考勤机</a></li>
-                    <li><a href="#">保险柜</a></li>
-                </ul>
-                <p>文具耗材</p>
-                <ul>
-                    <li><a href="#">学生文具</a></li>
-                    <li><a href="#">办公文具</a></li>
-                    <li><a href="#">纸类</a></li>
-                    <li><a href="#">打印耗材</a></li>
-                    <li><a href="#">服务器</a></li>
-                    <li><a href="#">联想</a></li>
-                </ul>
-                <p>电脑整机</p>
-                <ul>
-                    <li><a href="#">笔记本</a></li>
-                    <li><a href="#">游戏机</a></li>
-                    <li><a href="#">台式机</a></li>
-                    <li><a href="#">一体机</a></li>
-                    <li><a href="#">服务器</a></li>
-                    <li><a href="#">联想</a></li>
-                </ul>
+                <c:forEach items="${sessionScope.booksCategories.categories}" var="firstLevel">
+                    <%
+                        Map.Entry<String,List<CategoryDto>> entry= ((Map<String, List<CategoryDto>>) pageContext.getAttribute("firstLevel")).entrySet().iterator().next();
+                        String key=entry.getKey();
+                        List<CategoryDto> values=entry.getValue();
+                    %>
+                    <p><%=key%></p>
+                    <ul>
+                        <c:forEach items="<%=values%>" var="secondLevel">
+                            <li><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=${secondLevel.id}">${secondLevel.name}</a></li>
+                        </c:forEach>
+                    </ul>
+                </c:forEach>
             </div>
         </div>
-        <div class="item_msg lf">
-            <img src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img3.png" alt=""/>
-
-            <p class="bottom_ys2">得力（deli）1548A商务办公桌面计算器 太阳能双电源</p>
-
-            <p class="bottom_ys3 price_ys3">￥58.00</p>
-
-            <p class="bottom_ys4 color_1"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
-        </div>
-        <div class="item_msg lf">
-            <img src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img4.png" alt=""/>
-
-            <p class="bottom_ys2">施耐德（Schneider） K15 经典款圆珠笔 </p>
-
-            <p class="bottom_ys3 price_ys3">￥12.00</p>
-
-            <p class="bottom_ys4 color_1"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
-        </div>
-
-        <div class="item_msg lf">
-            <a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">
-            <img src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img5.png" alt=""/>
-            <p class="bottom_ys2">齐心皮面日程本子2017.1-2018.6计划记事本效率手册</p>
-            <p class="bottom_ys3 price_ys3">￥23.00</p>
-            <p class="bottom_ys4 color_1"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010" id="iii">查看详情</a></p>
-            </a>
-        </div>
+        <c:forEach items="${sessionScope.books}" var="books">
+            <div class="item_msg lf">
+                <img src="..${books.image}" style="width:198px; height:136px" alt=""/>
+                <p class="bottom_ys2" style="width:198px; height:28px">${books.name}</p>
+                <p class="bottom_ys3 price_ys3">￥${books.price}</p>
+                <p class="bottom_ys4 color_1"><a href="${pageContext.request.contextPath}/goods/showProductDetails.do?id=10000010">查看详情</a></p>
+            </div>
+        </c:forEach>
 
     </div>
 </div>

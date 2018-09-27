@@ -4,6 +4,7 @@ import com.tedu.dao.GoodsCategoryDao;
 import com.tedu.dao.GoodsDao;
 import com.tedu.dao.Impl.GoodsDaoImpl;
 import com.tedu.dao.Impl.GoodsGategoryDaoImpl;
+import com.tedu.dto.CategoryDto;
 import com.tedu.dto.GoodsCategoryDto;
 import com.tedu.dto.GoodsDto;
 import com.tedu.entity.Goods;
@@ -30,7 +31,7 @@ public class GoodsServiceImpl implements GoodsService {
         List<GoodsDto> resultList=new ArrayList<>();
         if(Objects.nonNull(goodsList)&&goodsList.size()>0){
             for (Goods good:goodsList) {
-                resultList.add(new GoodsDto(good.getTitle(),good.getPrice()));
+                resultList.add(new GoodsDto(good.getTitle(),good.getPrice(),good.getImage()));
             }
         }
         return resultList;
@@ -50,15 +51,15 @@ public class GoodsServiceImpl implements GoodsService {
             for (int i = 0; Objects.nonNull(firstLevel)&&i <firstLevel.size() ; i++) {
                 //得到第一级目录中的其中一个对象
                 GoodsCategory currentCategory1=firstLevel.get(i);
-                List<Map<String,List<String>>> levels=result.getCatgories();
+                List<Map<String, List<CategoryDto>>> levels=result.getCategories();
                 //装配第一层目录项目的内容
-                Map<String,List<String>> firstLevelContent=new HashMap<>();
+                Map<String, List<CategoryDto>> firstLevelContent=new HashMap<>();
                 //加载对应的第二层目录
                 List<GoodsCategory> secondLevel=goodsCategoryDao.selectCategoryByParentId(currentCategory1.getId(),1,SECOND_LEVEL);
-                List<String> secondLevelContent=new ArrayList<>();
+                List<CategoryDto> secondLevelContent=new ArrayList<>();
                 //装配第二层目录项目的内容，即第二级目录的类别名称
                 for (int j = 0; Objects.nonNull(secondLevel)&&j <secondLevel.size() ; j++) {
-                    secondLevelContent.add(secondLevel.get(j).getName());
+                    secondLevelContent.add(new CategoryDto(secondLevel.get(i).getId(),secondLevel.get(j).getName()));
                 }
                 //将第一级目录名和其对应的第二级目录形成一个映射并保存在链表中，例如第一级目录名电脑外设，第二级目录名电脑外设1，电脑外设2等等
                 firstLevelContent.put(currentCategory1.getName(),secondLevelContent);

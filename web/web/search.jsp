@@ -5,7 +5,7 @@
 <html>
 <head lang="en">
 <meta charset="UTF-8">
-<title>商品搜索页面</title>
+<name>商品搜索页面</name>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css" />
@@ -25,7 +25,7 @@
 									<img src="${pageContext.request.contextPath}${goods.image}" style="width: 230px; height: 180px" alt="" onclick="toItemInfo(${goods.id})" />
 								</div>
 								<div class="describe">
-									<p onclick="toItemInfo(${goods.id})" style="width: 230px; height: 14px; overflow: hidden;">${goods.title}</p>
+									<p onclick="toItemInfo(${goods.id})" style="width: 230px; height: 14px; overflow: hidden;">${goods.name}</p>
 									<span class="price"><b>￥</b><span class="priceContent">${goods.price}.00</span></span>
 									<span class="addCart"><img id="collect" src="${pageContext.request.contextPath}/images/search/care.png" alt="" /><a href="javascript:void(0);" class="add_cart">加入购物车</a></span>
 									<!--<span class="succee" style="display: none">

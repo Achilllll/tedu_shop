@@ -1,20 +1,22 @@
 package com.tedu.dto;
 
 public class GoodsDto {
-    private String title;
+    private String name;
     private Double price;
+    private String image;
 
-    public GoodsDto(String title, Double price) {
-        this.title = title;
+    public GoodsDto(String name, Double price, String image) {
+        this.name = name;
         this.price = price;
+        this.image=image;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getPrice() {
@@ -25,5 +27,20 @@ public class GoodsDto {
         this.price = price;
     }
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "GoodsDto{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                '}';
+    }
 }

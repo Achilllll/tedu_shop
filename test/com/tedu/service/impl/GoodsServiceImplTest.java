@@ -1,7 +1,10 @@
 package com.tedu.service.impl;
 
+import com.tedu.dto.GoodsDto;
 import com.tedu.service.GoodsService;
 import org.junit.Test;
+
+import java.util.List;
 
 public class GoodsServiceImplTest {
 
@@ -13,7 +16,11 @@ public class GoodsServiceImplTest {
 
     @Test
     public void listGoods() {
-        System.out.println(goodsService.listGoods(163,1,3));
+        List<GoodsDto> goodsDtos=goodsService.listGoods(238,1,3);
+        for (GoodsDto goodsdto: goodsDtos) {
+            System.out.println(goodsdto);
+        }
+
     }
 
     @Test
